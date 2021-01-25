@@ -117,6 +117,9 @@ app.post('/login',jsonParser,async (req, res, next) => {
 app.use(express.static(__dirname + 'public')); //Serves resources from public folder
 
 app.use('/public', express.static(__dirname + '/public'));
+app.get('/', (req,res) =>{
+  res.redirect("/login")
+}) 
 app.get('/login', (req,res,next) => {
   passport.authenticate('jwt', { session: false }, async (err, user, info) => {
     console.log(err,user,info)
