@@ -6,7 +6,7 @@ const gpuSchema = new mongoose.Schema({
         required: [true, "Debe tener nombre"]
     },
     memory: {
-        type: String,
+        type: Number,
         required: [true, "Debe tener memoria"]
     },
     image: {

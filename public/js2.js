@@ -14,7 +14,7 @@ async function subir(){
         if (response){
             const datos = {
                 name:document.getElementById("name").value,
-                memory:document.getElementById("memory").value,
+                memory:parseInt(document.getElementById("memory").value),
                 image:selectedFile.name,
                 price:parseInt(document.getElementById("price").value),
                 benchmarks:[
