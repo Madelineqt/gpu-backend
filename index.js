@@ -44,7 +44,22 @@ app.get('/gpus', jsonParser, async function (req, res) {
     const gpus = await gpu.find({})
     res.send(gpus)
 });
-app.post('/upload', multipartMiddleware,passport.authenticate('jwt', { session: false }), async function (req, res) {
+app.post('/delete',jsonParser, passport.authenticate('jwt', { session: false }),async function (req,res){
+  const idaborrar = req.body.id
+  const response = await gpu.findOneAndDelete({_id:idaborrar}).then(response =>{
+    console.log(response)
+    s3.deleteObject({
+      Bucket: "gpucomparator",
+      Key: response.image
+    },function (err,data){})
+    res.send(true)
+  }).catch(err => {
+    console.log(err)
+    res.send(err)
+  })
+
+} )
+app.post('/upload',multipartMiddleware, passport.authenticate('jwt', { session: false }), async function (req, res) {
   console.log(req.files)
   var file = req.files.file;
   var params

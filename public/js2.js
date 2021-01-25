@@ -1,4 +1,5 @@
 var selectedFile
+var gpus
 async function subir(){
    
     let data = new FormData();
@@ -36,6 +37,7 @@ async function subir(){
             return
         })
         if (response2){
+            obtenergpus()
             document.getElementById("danger-alerts").innerHTML = '<div class="alert alert-success" role="alert"> GPU subida correctamente </div>'
         }
     }
@@ -43,6 +45,35 @@ async function subir(){
 
 
 }
+async function obtenergpus(){
+    const response = await axios.get("https://gpusjoapi.herokuapp.com/gpus")
+    gpus = response.data
+    loadSelect()
+}
+function loadSelect(){
+    var select = document.getElementById("gpudelete")
+    select.innerHTML = ' <option value="" disabled selected>Selecciona...</option>'
+    gpus.forEach(element => {
+        select.innerHTML += `<option value="${element._id}">${element.name}</option>`
+    });
+}
+async function borrar(){
+    var idaborrar = document.getElementById("gpudelete").value
+    console.log(idaborrar)
+    if (idaborrar != ""){
+        const response = await axios.post("https://gpusjoapi.herokuapp.com/elete", {id:idaborrar}).then(response => {
+            console.log(response.data)
+            obtenergpus()
+            return true
+        }).catch(err => {
+            console.log(err)
+            document.getElementById("danger-alerts").innerHTML = '<div class="alert alert-danger" role="alert"> Error borrando GPU</div>'
+            return
+        })
+        
+    }
+}
+obtenergpus()
 document.getElementById("imagen").onchange = () => {
     selectedFile = document.getElementById("imagen").files[0];
     console.log(selectedFile)
