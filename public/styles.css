@@ -1,0 +1,159 @@
+.jumbotron img {
+    width: 400px;
+}
+.white {
+    color: white !important;
+}
+.jumbotron{
+    text-align: center;
+    padding: 5%;
+    background-image: url('/public/bg.png');
+    background-size: cover;
+    color: white;
+}
+.jumbotron h1{
+    margin-top: 20px;
+}
+.hide {
+    display: none;
+}
+.form-control{
+    border-radius: 1px;
+    background-color: #ededed;
+    border:none;
+}
+.minute-controller{
+    display: flex;
+}
+small a {
+    color:white;
+}
+#footer{
+    
+    background-color: #BA172C;
+    color: white;
+    margin-top: 100px;
+
+}
+@media only screen and (min-width: 1370px) {
+#booking{
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 43px -4px rgba(0,0,0,.19);
+    padding:3%;
+    width: auto;
+    position: relative;
+    margin-left: 20%;
+    margin-right: 20%;
+    top: 35%;
+}
+body, html { overflow-x:hidden !important }
+}
+@media only screen and (max-width: 1370px) {
+
+    #booking{
+       background-color: white;
+        border-radius: 6px;
+        box-shadow: 0 2px 43px -4px rgba(0,0,0,.19);
+        padding: 3%;
+        width: auto;
+        position: relative;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .descriptions{
+        position: absolute;
+        top: 270%;
+        left: 2%;
+        right: 2%;
+    }
+}
+.btn-primary {
+    background-color: #BA172C;
+    border-color: #BA172C;
+    
+}
+
+.btn-primary:hover{
+    background-color: #BA172C;
+    border-color: #BA172C; 
+}
+.btn-primary:focus{
+    background-color: #BA172C !important;
+    border-color: #BA172C !important;
+}
+.btn-primary:active{
+    background-color: #BA172C;
+    border-color: #BA172C;
+}
+.btn-outline-primary{
+    border-color: #BA172C;
+    color: #BA172C;
+}
+.btn-outline-primary:hover{
+    background-color:#BA172C;
+}
+.btn-hours{
+    margin: 2%;
+}
+.btn-primary.disabled, .btn-primary:disabled {
+    color: #fff;
+    background-color:  #BA172C;
+    border-color:  #BA172C;
+}
+.btn-outline-primary.disabled, .btn-outline-primary:disabled {
+    color:  #BA172C;
+    background-color: transparent;
+}
+.row.white{
+    text-align: center !important;
+}
+@media only screen and (max-width: 600px) {
+    div[class*="col-4"]{flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
+    max-width: 100%;}
+    div[class*="col-6"]{flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
+    max-width: 100%;}
+    div[class*="col-3"]{flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
+    max-width: 100%;}
+    div[class*="col-8"]{flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
+    max-width: 100%;}
+    .jumbotron img {
+        width: 100%;
+    }
+}
+html, body {
+    overflow-x: hidden;
+  }
+  .btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#img-upload{
+    width: 100%;
+}

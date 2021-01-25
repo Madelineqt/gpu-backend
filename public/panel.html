@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AÑADIR GPUs</title>
+    <!--Open Graph-->
+    <meta property="og:title" content="AÑADIR GPUs" />
+    <meta property="og:type" content="service" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/styles.css">
+    <link rel="stylesheet" href="/public/animations.css">
+    <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/public/favicon.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.10.2/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script defer src="/public/js2.js"></script>
+    <!-- Latest compiled and minified CSS -->
+
+
+
+    <!-- Testing -->
+</head>
+
+<body>
+    <section id="intro" class="slide-in-top">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <img src="/public/logoSJO.png">
+                <h1 class="display-4" style="font-size: 2.5rem;">AÑADIR GPUs</h1>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="slide-in-bottom">
+        <div id="danger-alerts"></div>
+        <div class="row">
+            <div class="col-6">
+                <h3>Imagen</h3>
+                <input type="file" id="imagen" class="form-control form-control-lg" >
+                <img src="" id="preview" class="img-thumbnail" >
+            </div>
+            <div class="col-6">
+               <h3>Datos</h3>
+               <label for="name">Nombre</label>
+               <input  class="form-control form-control-lg" type="text" id="name">
+                <label for="memory">Memoria</label>
+                <input  class="form-control form-control-lg" type="text" id="memory">
+                <label for="price">Precio</label>
+                <input  class="form-control form-control-lg" type="number" id="price">
+            </div>
+        </div>
+        <h1>Benchmarks</h1>
+        <div class="row">
+            
+            <div class="col-6">
+                
+                <label for="0">Luces</label>
+               <input  class="form-control form-control-lg" type="number" id="0">
+               <label for="0">Reflejos</label>
+               <input  class="form-control form-control-lg" type="number" id="1">
+               <label for="0">MRender</label>
+               <input  class="form-control form-control-lg" type="number" id="2">
+               <label for="0">Gravedad</label>
+               <input  class="form-control form-control-lg" type="number" id="3">
+            </div>
+            <div class="col-6">
+                <label for="0">CSGO</label>
+                <input  class="form-control form-control-lg" type="number" id="4">
+                <label for="0">Fortnite</label>
+                <input  class="form-control form-control-lg" type="number" id="5">
+                <label for="0">League Of Legends</label>
+                <input  class="form-control form-control-lg" type="number" id="6">
+                <label for="0">Battlefield 1</label>
+                <input  class="form-control form-control-lg" type="number" id="7">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <button onclick="subir()" id="botonSubmit" class="btn btn-primary btn-lg">SUBIR</button>
+            </div>
+        </div>
+    </section>
+    <section id="footer" class="slide-in-bottom">
+        <div class="container">
+            <footer class="page-footer font-small blue pt-4">
+
+                <!-- Footer Links -->
+                <div class="container-fluid text-center text-md-left">
+
+                    <!-- Grid row -->
+                    <div class="row white">
+
+                        <!-- Grid column -->
+                        <div class="col-md-4 mt-md-0 mt-4">
+                            <h5 class="text-uppercase">SANT JOSEP OBRER</h5>
+                            <!-- Content -->
+                            <p>
+                                <br>
+                                La educación en la escuela es todo un RETO en el siglo XXI. Y queremos vivir este reto con mucha ilusión, proponiéndonos metas altas, para llegar a lo más alto posible!!!
+                                <br>
+                                No somos perfectos, pero no tenemos miedo de equivocarnos, de aprender de los errores, corregirlos y MEJORAR, porque lo más importante es CREER en lo que haces, y éste es el verdadero aprendizaje!!!</p>
+
+                        </div>
+                        <!-- Grid column -->
+
+                        <hr class="clearfix w-100 d-md-none pb-3">
+                        <div class="col-md-4 mt-md-0 mt-4">
+
+                            <!-- Content -->
+                            <h5 class="text-uppercase">COMPARTE SJO</h5>
+
+                            <button type="button"
+                              
+                                class="btn btn-fb"><i style="color:white;" class="fab fa-facebook-f"></i></button>
+                            <button type="button"
+                              
+                                class="btn btn-fb"><i style="color:white;" class="fab fa-google-plus-g"></i></button>
+                            <button type="button"
+                              
+                                class="btn btn-fb"><i style="color:white;" class="fab fa-twitter"></i></button>
+                            <button type="button"
+                            
+                                class="btn btn-fb"><i style="color:white;" class="fab fa-linkedin-in"></i></button>
+                        </div>
+                        <!-- Grid column -->
+                        <hr class="clearfix w-100 d-md-none pb-3">
+                        <div class="col-md-4 mb-md-0 mb-4">
+
+                            <!-- Links -->
+                            <h5 class="text-uppercase">Enlaces</h5>
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a style="color:white;"
+                                        href="#">Política de
+                                        privacidad</a>
+                                </li>
+                                <li>
+                                    <a style="color:white;"
+                                        href="#">Política
+                                        de calidad</a>
+                                </li>
+                                <li>
+                                    <a style="color:white;" href="#">Política de
+                                        Cookies</a>
+                                </li>
+                                <li>
+                                    <a style="color:white;" href="#">Aviso
+                                        legal</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <!-- Grid column -->
+
+
+
+                    </div>
+                    <!-- Grid row -->
+
+                </div>
+                <!-- Footer Links -->
+
+                <!-- Copyright -->
+                <div class="footer-copyright text-center py-3">© 2020 :
+                    <a style="color:white;" href="#"> SJO</a>
+                </div>
+                <!-- Copyright -->
+
+            </footer>
+        </div>
+
+        <!-- Footer -->
+    </section>
+    <script>
+     
+    </script>
+  
+</body>
+
+</html>
