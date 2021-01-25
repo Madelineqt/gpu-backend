@@ -3,7 +3,7 @@ async function subir(){
    
     let data = new FormData();
     data.append('file', selectedFile, selectedFile.name);
-    const response = await axios.post("http://localhost:8000/upload", data, { headers:{'Content-Type': `multipart/form-data`}}).then(response => {
+    const response = await axios.post("https://gpusjoapi.herokuapp.com/upload", data, { headers:{'Content-Type': `multipart/form-data`}}).then(response => {
         console.log(response.data)
         return true
     }).catch(err => {
@@ -28,7 +28,7 @@ async function subir(){
                     parseInt( document.getElementById("7").value),
                 ],
         }
-        const response2 = await axios.post("http://localhost:8000/gpus", datos).then(response => {
+        const response2 = await axios.post("https://gpusjoapi.herokuapp.com/gpus", datos).then(response => {
             return true
         }).catch(err => {
             document.getElementById("danger-alerts").innerHTML = '<div class="alert alert-danger" role="alert"> Error subiendo datos</div>'

@@ -3,7 +3,7 @@ async function login(){
         user: document.getElementById("user").value,
         password: document.getElementById("pass").value
     }
-    const response = await axios.post('http://localhost:8000/login', data).then(response => {
+    const response = await axios.post('https://gpusjoapi.herokuapp.com/login', data).then(response => {
         return response.data
     }).catch(err => {
         document.getElementById("danger-alerts").innerHTML = '<div class="alert alert-danger" role="alert"> Login inválido</div>'
