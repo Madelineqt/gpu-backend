@@ -1,4 +1,8 @@
 async function login(){
+    if (document.getElementById("user").value == "" || document.getElementById("pass").value == ""){
+        document.getElementById("danger-alerts").innerHTML = '<div class="alert alert-danger" role="alert"> Login inválido</div>'
+        return
+    }
     const data = {
         user: document.getElementById("user").value,
         password: document.getElementById("pass").value
